@@ -1,0 +1,27 @@
+{
+  "name": "boxedfashion",
+  "description": "Innovative fashion subscription service that connects fashion customers with retailers. The platform offers personalized style recommendations and curated clothing packages based on individual preferences.",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "node test.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathmesh-ka-github/se-project.git"
+  },
+  "keywords": [
+    "boxedfashion"
+  ],
+  "author": "team12",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prathmesh-ka-github/se-project/issues"
+  },
+  "homepage": "https://github.com/prathmesh-ka-github/se-project#readme",
+  "dependencies": {
+    "express": "^4.21.0",
+    "nodemon": "^3.1.5"
+  }
+}
