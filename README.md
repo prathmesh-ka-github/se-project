@@ -22,6 +22,8 @@ Innovative fashion subscription service that connects fashion customers with ret
 - Server-side application
     - ExpressJS
     - NodeJS
+- Endpoint testing
+    - Insomnia
 - Database system
     - MongoDB
     - PostgreSQL
