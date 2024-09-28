@@ -33,4 +33,8 @@ Innovative fashion subscription service that connects fashion customers with ret
         - Keras
         - SKlearn
 
+- Design Tools
+    - Figma
+    - 
+
 ![MEN STACK](./assets/menstackcropped1.png)
