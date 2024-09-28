@@ -10,7 +10,8 @@ Innovative fashion subscription service that connects fashion customers with ret
 4. Virtual closet for existing wardrobe items
 
 ## Dependancies -
-- 
+- nodemon - 3.1.5
+- mongoose - 8.7.0
 
 ## TechStack used -
 
@@ -24,7 +25,6 @@ Innovative fashion subscription service that connects fashion customers with ret
 - Database system
     - MongoDB
     - PostgreSQL
-
 - Machine learning model
     - Python
         - Numpy
@@ -32,9 +32,12 @@ Innovative fashion subscription service that connects fashion customers with ret
         - Tensorflow
         - Keras
         - SKlearn
-
 - Design Tools
     - Figma
-    - 
+    - Adobe Photoshop
+    - Adobe Illustrator
+- Text Editor
+    - VS Code
+    - X Code
 
 ![MEN STACK](./assets/menstackcropped1.png)
