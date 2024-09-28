@@ -1,0 +1,226 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #243441;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #243441;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #ff9e80;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffab91;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(36, 52, 65, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    color: #243441;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-btn {
+    background-color: #f0f4f8;
+    border: 1px solid #d0d9e1;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #243441;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.toggle-btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.toggle-btn.active {
+    background-color: #243441;
+    color: white;
+    border-color: #243441;
+}
+
+.toggle-btn:hover:not(.active) {
+    background-color: #e1e8ef;
+}
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d0d9e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff9e80;
+    outline: none;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: #243441;
+}
+
+.forgot-password {
+    color: #ff9e80;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ff7043;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #ff9e80;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ff7043;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #243441;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d0d9e1;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.modal-content input[type="email"]:focus {
+    border-color: #ff9e80;
+    outline: none;
+}
+
+.modal-content .reset-btn {
+    padding: 0.75rem 1rem;
+    background-color: #ff9e80;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .reset-btn:hover {
+    background-color: #ff7043;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
