@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const climate = document.getElementById('climate').value;
         const prints = Array.from(document.querySelectorAll('input[name="prints"]:checked')).map(el => el.value);
 
-        // Log responses (this can later be sent to the backend)
+        // Log responses 
         console.log({
             bodyType,
             occasions,
@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutLink.addEventListener('click', (e) => {
         e.preventDefault();
         alert('You have been logged out.');
-        window.location.href = 'login.html';  // Adjust this URL to your actual login page
+        window.location.href = 'login.html';  
     });
 });
