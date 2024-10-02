@@ -20,6 +20,11 @@ app.get('/err', (req,res) => {
     res.sendFile(__dirname + "/Pages/error.html")
 })
 
+app.get('/login', (req,res) => {
+    res.status(200)
+    res.sendFile(__dirname + "/Pages/login.html")
+})
+
 app.listen (port, () => {
     console.log(`listening to http://localhost:${port}`)
 })
