@@ -13,6 +13,10 @@
 }
 
 .navbar-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
     display: flex;
     justify-content: space-around;
     background-color: #D5956E;

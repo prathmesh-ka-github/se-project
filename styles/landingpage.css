@@ -38,6 +38,8 @@
     transform: translateY(-30px);
 }
 
+/* !----------- HOW IT WORKS ----------*/
+
 .hiw-container {
     display: flex;
     justify-content: center;
@@ -85,6 +87,8 @@
     transform: scale(1.2);
 }
 
+/* !----------- Clothing banner ----------*/
+
 .clothingbanner-container {
     display: flex;
     flex-direction: column;
@@ -105,7 +109,7 @@
 .clothingbanner-container img {
     position: relative;
     width: 100%;
-    filter: brightness(50%);
+    filter: brightness(40%);
 }
 
 .clothingbanner-text {
@@ -120,5 +124,108 @@
     border-radius: 10px;
     background-color: #0062C9;
     color: white;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+/* !----------- Smart outfit suggestions ----------*/
+
+.sosugg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px 0px;
+}
+
+.sosugg {
+    display: flex;
+    align-items: center;
+}
+
+.sosugg-leftcol {
+    display: flex;
+    flex-direction: column;
+}
+.sosugg-rightcol {
+    display: flex;
+    flex-direction: column;
+}
+
+.sosugg-leftcol img {
+    width: 600px;
+    margin: 20px;
+}
+.sosugg-rightcol img {
+    width: 600px;
+    margin: 20px;
+}
+.sosugg-rightcol h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 50px 20px;
+    font-size:  60px;
+}
+
+/* !------------------------MEMBERSHIP TIERS----------------- */
+
+.memtiers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.memtiers-heading {
+    font-size: 60px;
+    font-family: Koulen, sans-serif;
+}
+.memtier-cards-wrapper {
+    display: flex;
+}
+
+.memtier-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.memtier-cards img{
+    width: 300px;
+    transition: filter 0.5s;
+    cursor: pointer;
+}
+
+.memtier-cards img:hover {
+    filter: brightness(50%);
+}
+
+.memtier-cards-name {
+    font-size: 30px;
+    padding: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* !---------------PAYMENT METHODS-------------- */
+
+.paymentmethods-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+}
+
+.paymentmethods-heading {
+    font-size: 80px;
+    font-family: Kodchasan, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 60px;
+}
+
+.paymentmethodimgs {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
 }
