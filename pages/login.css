@@ -18,25 +18,62 @@ header {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav {
+.ribbon {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    font-size: 15px;
+    background-color: #AE7A5A;
+    color: white;
+    margin: 5px 0px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
-.nav-link {
-    color: #ff9e80;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D5956E;
+    height: 70px;
+    align-items: center;
 }
 
-.nav-link:hover {
-    color: #ffab91;
+.nav-left {
+    display: flex;
+    align-items: center;
 }
+.search-container img {
+    width: 35px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+.ham-container img {
+    width: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.userprofile-container img {
+    height: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.shoppingcart-container img{
+    height: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
 
 main {
     flex-grow: 1;
