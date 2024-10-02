@@ -17,7 +17,7 @@ app.get('/', (req,res) => {
 
 app.get('/err', (req,res) => {
     res.status(200)
-    res.sendFile(__dirname + "/error.html")
+    res.sendFile(__dirname + "/Pages/error.html")
 })
 
 app.listen (port, () => {
