@@ -4,17 +4,80 @@
     padding: 0;
 }
 
+.ribbon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    font-size: 15px;
+    background-color: #AE7A5A;
+    color: white;
+    margin: 5px 0px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D5956E;
+    height: 70px;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+.search-container img {
+    width: 35px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+.ham-container img {
+    width: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.userprofile-container img {
+    height: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.shoppingcart-container img{
+    height: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
 .container {
     background-color: #fff;
+
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
