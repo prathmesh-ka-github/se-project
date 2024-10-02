@@ -1,0 +1,19 @@
+.footer-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    background-color: #D5956E;
+    height: 150px;
+}
+.foot-left {
+    display: flex;
+    align-items: center;
+}
+.logocp-container img {
+    width: 220px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
