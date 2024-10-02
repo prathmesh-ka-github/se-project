@@ -1,6 +1,5 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
     color: #243441;
     margin: 0;
     padding: 0;
@@ -77,26 +76,30 @@ header {
 
 main {
     flex-grow: 1;
-    justify-content: center;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    margin: 50px 0px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .login-container {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(36, 52, 65, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     margin-bottom: 100px;
     margin-top: 100px;
-    margin-left: 100px;
 }
 
 h2 {
-    color: #243441;
+    color: black;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 1.5rem;
+    font-family: Koulen, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .toggle-container {
@@ -107,7 +110,7 @@ h2 {
 
 .toggle-btn {
     background-color: #f0f4f8;
-    border: 1px solid #d0d9e1;
+    border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     color: #243441;
@@ -123,9 +126,8 @@ h2 {
 }
 
 .toggle-btn.active {
-    background-color: #243441;
+    background-color: #D5956E;
     color: white;
-    border-color: #243441;
 }
 
 .toggle-btn:hover:not(.active) {
@@ -150,6 +152,7 @@ input[type="password"]:focus {
 
 .form-options {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
@@ -162,19 +165,19 @@ input[type="password"]:focus {
 }
 
 .forgot-password {
-    color: #ff9e80;
+    color: #D00000;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .forgot-password:hover {
-    color: #ff7043;
+    color: #ff0000;
 }
 
 .login-btn {
-    width: 100%;
+    width: 40%;
     padding: 0.75rem;
-    background-color: #ff9e80;
+    background-color: #3F96F1;
     color: white;
     border: none;
     border-radius: 4px;
@@ -184,7 +187,13 @@ input[type="password"]:focus {
 }
 
 .login-btn:hover {
-    background-color: #ff7043;
+    background-color: #3285de;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Modal styling */
@@ -261,4 +270,9 @@ input[type="password"]:focus {
 .close:focus {
     color: #000;
     text-decoration: none;
+}
+
+.loginimage-container img{
+    width: 400px;
+    transform: translateY(-30px);
 }
