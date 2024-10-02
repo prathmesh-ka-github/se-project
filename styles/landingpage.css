@@ -229,3 +229,17 @@
     width: 100%;
     height: auto;
 }
+
+/* !---------------FAQ's-------------- */
+.faq-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+}
+.faq-heading{
+    font-size: 80px;
+    font-family: Kodchasan, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 60px;
+}
