@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxedFashion Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BoxedFashionLogo</div>
+        <nav>
+            <a href="#" class="nav-link">Sign up</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <div class="toggle-container">
+                <button id="customerBtn" class="toggle-btn active">Customer</button>
+                <button id="retailerBtn" class="toggle-btn">Retailer</button>
+            </div>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Customer Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Customer Login</button>
+            </form>
+        </div>
+        <div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Reset Password</h2>
+        <p>Please enter your email address to reset your password.</p>
+        <input type="email" id="resetEmail" placeholder="Enter your email" required>
+        <button id="resetPasswordButton" class="reset-btn">Reset Password</button>
+    </div>
+</div>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>
