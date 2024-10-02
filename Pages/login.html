@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxedFashion Login</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/reshot-icon-box-VSWB78FAGX.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="/Pages/login.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+
+<body>
+    <!--! ------------------RIBBON-------------------- -->
+    <div class="ribbon text-3xl">Free shipping available on all prepaid orders more than 10$ </div>
+
+    <!--! ------------------NAVBAR-------------------- -->
+    <div class="navbar-container">
+        <div class="nav-left">
+            <div class="ham-container">
+                <img src="../assets/menu.svg" alt="ham-menu">
+            </div>
+            <div class="search-container">
+                <img src="../assets/search.svg" alt="search">
+            </div>
+        </div>
+        <div class="logo-container">
+            <a href="/">
+                <img class="nav-logo" src="../assets/Group 3.png" alt="boxedfashion">
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="userprofile-container">
+                <img src="../assets/userprofile.svg" alt="profile">
+            </div>
+            <div class="shoppingcart-container">
+                <img src="../assets/cart.png" alt="cart">
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="login-container">
+            <p>Already a customer?</p>
+            <div class="toggle-container">
+                <button id="customerBtn" class="toggle-btn active">Customer</button>
+                <button id="retailerBtn" class="toggle-btn">Retailer</button>
+            </div>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Customer Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Customer Login</button>
+                <a href="/signin">Don't have a account yet?</a>
+            </form>
+        </div>
+        <div id="forgotPasswordModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Reset Password</h2>
+                <p>Please enter your email address to reset your password.</p>
+                <input type="email" id="resetEmail" placeholder="Enter your email" required>
+                <button id="resetPasswordButton" class="reset-btn">Reset Password</button>
+            </div>
+        </div>
+
+        <div class="loginimage-container">
+            <img src="../assets/pexels-ogproductionz-17414150.jpg" alt="women">
+        </div>
+        
+    </main>
+    <!-- !--------------------FOOTER------------------- -->
+    <div class="footer-container">
+        <div class="foot-left"></div>
+        <div class="logocp-container">
+            <img src="../assets/logo_cpright.png" alt="logo-copyright">
+        </div>
+    </div>
+    </div>
+    
+    <script src="/pages/login.js"></script>
+
+</body>
+
+</html>

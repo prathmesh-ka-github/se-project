@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #243441;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #243441;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ribbon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    font-size: 15px;
+    background-color: #AE7A5A;
+    color: white;
+    margin: 5px 0px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #D5956E;
+    height: 70px;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+.search-container img {
+    width: 35px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+.ham-container img {
+    width: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.userprofile-container img {
+    height: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.shoppingcart-container img{
+    height: 40px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+p {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: Koulen, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-btn {
+    background-color: #f0f4f8;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #243441;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.toggle-btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.toggle-btn.active {
+    background-color: #D5956E;
+    color: white;
+}
+
+.toggle-btn:hover:not(.active) {
+    background-color: #e1e8ef;
+}
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d0d9e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff9e80;
+    outline: none;
+}
+
+.form-options {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: #243441;
+}
+
+.forgot-password {
+    color: #D00000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ff0000;
+}
+
+.login-btn {
+    width: 35%;
+    padding: 0.75rem;
+    margin-bottom: 10px;
+    background-color: #3F96F1;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #3285de;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #243441;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d0d9e1;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.modal-content input[type="email"]:focus {
+    border-color: #ff9e80;
+    outline: none;
+}
+
+.modal-content .reset-btn {
+    padding: 0.75rem 1rem;
+    background-color: #ff9e80;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .reset-btn:hover {
+    background-color: #ff7043;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.loginimage-container img{
+    width: 400px;
+    transform: translateY(-30px);
+}
