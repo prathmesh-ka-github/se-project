@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 16px;
+            text-align: center;
+            width: 300px;
+            margin: 10px auto;
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .card-content {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Survey Results</h2>
+    <% cards.forEach(function(card) { %>
+        <div class="card">
+            <!-- <img src="<%= card.images %>" alt="Card Image" class="card-image"> -->
+            <div class="card-content">
+                <h3><%= card.name %></h3>
+                <p><%= card.description %></p>
+            </div>
+        </div>
+    <% }); %>
+</body>
+</html>

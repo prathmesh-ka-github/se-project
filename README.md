@@ -9,9 +9,11 @@ Innovative fashion subscription service that connects fashion customers with ret
 3. Subscription-based clothing delivery
 4. Virtual closet for existing wardrobe items
 
-## Dependancies -
+## Dependencies - run "npm install" and "pip install -r requirements.txt" to download dependencies
 - nodemon - 3.1.5
 - mongoose - 8.7.0
+- ejs - 3.1.6
+- pymongo - 4.10.1
 
 ## TechStack used -
 

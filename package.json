@@ -23,6 +23,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "express": "^4.21.0",
+    "ejs": "^3.1.6",
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.5",
     "postcss": "^8.4.47",
