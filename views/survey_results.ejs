@@ -27,12 +27,14 @@
     <h2>Survey Results</h2>
     <% cards.forEach(function(card) { %>
         <div class="card">
-            <!-- <img src="<%= card.images %>" alt="Card Image" class="card-image"> -->
+            <img src="<%= card.images %>" alt="Card Image" class="card-image">
             <div class="card-content">
                 <h3><%= card.name %></h3>
                 <p><%= card.description %></p>
             </div>
         </div>
+        
     <% }); %>
+    <button onClick="window.location.reload();">Get Another Recommendation</button>
 </body>
 </html>

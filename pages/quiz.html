@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoxedFashion Style Quiz</title>
-    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="/styles/quiz.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body>
     <header>
@@ -20,7 +23,7 @@
         <div class="quiz-container">
             <h2>Find Your Style</h2>
             <p>Answer a few questions to help us recommend the best outfits for you!</p>
-            <form id="styleQuizForm">
+            <form id="inputForm" action="/submit-survey" method="POST">
                 <!-- Question 1: Body Type -->
                 <div class="question">
                     <label for="bodyType">What is your body type?</label>
@@ -65,24 +68,24 @@
                     <label for="colors">Select your favorite colors:</label>
                     <div class="checkbox-container">
                         <div class="column">
-                            <input type="checkbox" id="color1" name="colors" value="black">
+                            <input type="checkbox" id="color1" name="colors" value="Black">
                             <label for="color1">Black</label><br>
                 
-                            <input type="checkbox" id="color2" name="colors" value="white">
+                            <input type="checkbox" id="color2" name="colors" value="White">
                             <label for="color2">White</label><br>
                 
-                            <input type="checkbox" id="color3" name="colors" value="red">
+                            <input type="checkbox" id="color3" name="colors" value="Red">
                             <label for="color3">Red</label><br>
                 
-                            <input type="checkbox" id="color4" name="colors" value="blue">
+                            <input type="checkbox" id="color4" name="colors" value="Blue">
                             <label for="color4">Blue</label><br>
                         </div>
                 
                         <div class="column">
-                            <input type="checkbox" id="color5" name="colors" value="green">
+                            <input type="checkbox" id="color5" name="colors" value="Green">
                             <label for="color5">Green</label><br>
                 
-                            <input type="checkbox" id="color6" name="colors" value="yellow">
+                            <input type="checkbox" id="color6" name="colors" value="Yellow">
                             <label for="color6">Yellow</label><br>
                 
                             <input type="checkbox" id="color7" name="colors" value="earthy-tones">
@@ -161,6 +164,7 @@
                 </div>
 
                 <!-- Submit Button -->
+                <!-- <button type="submit" class="submit-btn">Get Recommendations</button> -->
                 <button type="submit" class="submit-btn">Get Recommendations</button>
             </form>
         </div>
