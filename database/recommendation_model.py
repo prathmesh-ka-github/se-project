@@ -32,16 +32,12 @@ def main():
     except Exception as e:
         print(e)
     db = client['ProductData']
-    products = db['ProductData']
+    products = db['products']
     gender = 'Men'
 
     input_data = sys.stdin.read()
     form_data = json.loads(input_data)
     colors = form_data['colors']
-    # color1 = 'Green'
-    # color2 = 'Yellow'
-    # color3 = 'Black'
-    #colors = [color1, color2, color3]
     colors_picked = {}
     
     shirt_names = ['shirt', 'tank', 'jersey', 'tee']

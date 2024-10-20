@@ -15,6 +15,8 @@ Innovative fashion subscription service that connects fashion customers with ret
 - ejs - 3.1.6
 - pymongo - 4.10.1
 - requests - 2.7.0
+- bcrypt - 5.1.1
+- express-session - 1.18.1
 
 ## TechStack used -
 

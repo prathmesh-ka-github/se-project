@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 16px;
+            text-align: center;
+            width: 300px;
+            margin: 10px auto;
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .card-content {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Catalogue</h2>
+        <% products.forEach(function(product) { %>
+            <div class="card" data-images="<%= product.images %>">
+                <img src="" alt="<%= product.name %>" class="card-image">
+                <div class="card-content">
+                    <h3><%= product.name %></h3>
+                    <p><%= product.description %></p>
+                    <p><strong>Price:</strong> <%= product.price %> <%= product.currency %></p>
+                </div>
+            </div>
+        <% }); %>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const images = card.dataset.images.split('~');
+                let imgElement = card.querySelector('.card-image');
+                for (let i = 0; i < images.length; i++) {
+                    let img = new Image();
+                    img.onload = function() {
+                        imgElement.src = this.src;
+                        return;
+                    }
+                    img.onerror = function() {
+                        console.log('Image failed to load: ' + this.src);
+                    }
+                    img.src = images[i];
+                    if (img.complete) {
+                        img.onload();
+                        break;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

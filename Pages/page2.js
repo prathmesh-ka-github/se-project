@@ -9,8 +9,8 @@ document.getElementById('page2-form').addEventListener('submit', function(e) {
 
     // Redirect to either the Customer or Retailer profile completion page
     if (userType === 'customer') {
-        window.location.href = 'page3-customer.html';
+        window.location.href = '/page3-customer';
     } else if (userType === 'retailer') {
-        window.location.href = 'page3-retailer.html';
+        window.location.href = '/page3-retailer';
     }
 });

@@ -1,27 +1,30 @@
-document.getElementById('page3-customer-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Fetch form values
-    const countryCode = document.getElementById('country-code').value;
-    const phone = document.getElementById('phone').value;
-    const addressLine1 = document.getElementById('address-line1').value;
-    const addressLine2 = document.getElementById('address-line2').value || '';  // Optional
-    const city = document.getElementById('city').value;
-    const county = document.getElementById('county').value;
-    const zip = document.getElementById('zip').value;
+document.getElementById('page3-customer-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-    // Simple validation for required fields
-    if (countryCode && phone && addressLine1 && city && county && zip) {
-        // Store the customer profile data (optional)
-        sessionStorage.setItem('customerPhone', `${countryCode}${phone}`);
-        sessionStorage.setItem('customerAddress', `${addressLine1}, ${addressLine2}, ${city}, ${county}, ${zip}`);
+    const formData = {
+        countryCode: document.getElementById('country-code').value,
+        phone: document.getElementById('phone').value,
+        addressLine1: document.getElementById('address-line1').value,
+        addressLine2: document.getElementById('address-line2').value,
+        city: document.getElementById('city').value,
+        state: document.getElementById('state').value,
+        zip: document.getElementById('zip').value,
+        role: 'Customer'
+    };
 
-        // Show success message
-        alert('Customer profile completed successfully!');
+    const response = await fetch('/submit-profile', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
 
-        // Proceed to submit data to the server or next step
-        // You can use AJAX, Fetch API, or any other method to send the data to the server.
+    if(response.ok) {
+        window.location.href = '/';
     } else {
-        alert('Please fill in all the required fields.');
+        alert('An error occurred while submitting your profile.');
     }
+    
 });
+
