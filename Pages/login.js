@@ -34,26 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateFormForUserType('Retailer');
     });
 
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = emailInput.value;
-        const password = passwordInput.value;
-        const isRemembered = rememberMeCheckbox.checked;
-        const userType = customerBtn.classList.contains('active') ? 'Customer' : 'Retailer';
-
-        // For now, instead of API call to our backend, we'll just log the attempt and simulate a successful login
-
-        loginBtn.disabled = true;
-        loginBtn.textContent = 'Logging in...';
-
-        setTimeout(() => {
-            alert(`${userType} login successful!`);
-            loginForm.reset();
-            loginBtn.disabled = false;
-            loginBtn.textContent = `${userType} Login`;
-        }, 1500);
-    });
-
     // Handle "Forgot Password?" click
     forgotPasswordLink.addEventListener('click', (e) => {
         e.preventDefault();
@@ -83,4 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
             forgotPasswordModal.style.display = 'none';
         }
     });
+});
+
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    };
+
+    const response = await fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('userEmail', data.email);
+        window.location.href = '/';
+    } else {
+        alert('An error occurred during login.');
+    }
 });

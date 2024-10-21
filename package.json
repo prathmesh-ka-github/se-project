@@ -22,8 +22,10 @@
   "homepage": "https://github.com/prathmesh-ka-github/se-project#readme",
   "dependencies": {
     "autoprefixer": "^10.4.20",
-    "express": "^4.21.0",
+    "bcrypt": "^5.1.1",
     "ejs": "^3.1.6",
+    "express": "^4.21.0",
+    "express-session": "^1.18.1",
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.5",
     "postcss": "^8.4.47",
