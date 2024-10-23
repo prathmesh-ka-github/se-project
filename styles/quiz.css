@@ -12,40 +12,12 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #243441;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-link {
-    color: #ff9e80;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-nav a:hover {
-    color: #ff7043;
-}
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 4rem;
     min-height: 100vh;
 }
 
@@ -55,8 +27,8 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto; /* Center the container */
+    max-width: 1100px;
+    font-size: 20px;
 }
 
 h2 {
@@ -115,6 +87,7 @@ input[type="email"] {
 
 select {
     padding-right: 1.5rem;
+    font-size: 20px;
 }
 
 button.submit-btn {
@@ -125,7 +98,7 @@ button.submit-btn {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 1rem;
+    font-size: 2rem;
     display: block;
     width: 100%;
 }

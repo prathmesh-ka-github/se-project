@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 25px;
-    font-size: 15px;
+    font-size: 12px;
     background-color: #AE7A5A;
     color: white;
     margin: 5px 0px;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-around;
     background-color: #D5956E;
-    height: 70px;
+    height: 60px;
     align-items: center;
 }
 
@@ -29,12 +29,12 @@
     align-items: center;
 }
 .search-container img {
-    width: 35px;
+    width: 25px;
     margin: 0px 15px ;
     cursor: pointer;
 }
 .ham-container img {
-    width: 40px;
+    width: 30px;
     margin: 0px 15px ;
     cursor: pointer;
 }
@@ -49,13 +49,13 @@
 }
 
 .userprofile-container img {
-    height: 40px;
+    height: 30px;
     margin: 0px 15px ;
     cursor: pointer;
 }
 
 .shoppingcart-container img{
-    height: 40px;
+    height: 30px;
     margin: 0px 15px ;
     cursor: pointer;
 }
