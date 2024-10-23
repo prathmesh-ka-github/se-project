@@ -28,7 +28,7 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 1100px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 h2 {
@@ -87,7 +87,7 @@ input[type="email"] {
 
 select {
     padding-right: 1.5rem;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 button.submit-btn {

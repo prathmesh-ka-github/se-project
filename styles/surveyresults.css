@@ -1,0 +1,46 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    text-align: center;
+    width: 300px;
+    margin: 10px auto;
+}
+.card-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+.card-content {
+    padding: 16px;
+}
+
+.results-heading {
+    margin: 20px auto;
+    font-size: 40px;
+    text-align: center;
+}
+
+.resultsbuttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultsbuttons button {
+    all: unset;
+    margin: 10px;
+    background-color: #0062C9;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.results-container {
+    display: flex;
+}
+body {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;   
+}
