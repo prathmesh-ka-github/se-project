@@ -7,9 +7,14 @@ Innovative fashion subscription service that connects fashion customers with ret
 1. Personalized style profiles through detailed quizzes
 2. Smart outfit suggestions based on user preferences
 3. Subscription-based clothing delivery
-4. Virtual closet for existing wardrobe items
+4. Virtual closet for existing wardrobe items  
 
-## Dependencies - run "npm install" and "pip install -r requirements.txt" to download dependencies
+Run   
+```npm install```    
+```pip install -r requirements.txt```   
+to install all the dependencies before running the 
+
+## Dependencies - 
 - nodemon - 3.1.5
 - mongoose - 8.7.0
 - ejs - 3.1.6

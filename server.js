@@ -18,12 +18,12 @@ app.use(express.static(__dirname + ""))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'Pages')));
 
-app.use(session({
-    secret: 'secret_key', 
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // set to true in production with HTTPS
-}));
+// app.use(session({
+//     secret: 'secret_key', 
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { secure: false } // set to true in production with HTTPS
+// }));
 
 mongoose.connect('mongodb+srv://alden:1234@boxedfashioncluster.ljset.mongodb.net/ProductData?retryWrites=true&w=majority&appName=BoxedfashionCluster');
 
@@ -44,36 +44,36 @@ app.get('/', (req,res) => {
 
 app.get('/err', (req,res) => {
     res.status(200)
-    res.sendFile(__dirname + "/Pages/error.html")
+    res.sendFile(__dirname + "/pages/error.html")
 })
 
 app.get('/login', (req,res) => {
     res.status(200)
-    res.sendFile(__dirname + "/Pages/login.html")
+    res.sendFile(__dirname + "/pages/login.html")
 })
 
 app.get('/signin', (req,res) => {
     res.status(200)
-    res.sendFile(__dirname + "/Pages/page1.html")
+    res.sendFile(__dirname + "/pages/page1.html")
 })
 
 app.get('/page2', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Pages/page2.html'));
+    res.sendFile(path.join(__dirname, 'pages/page2.html'));
 });
 
 app.get('/page3-customer', (req,res) => {
     res.status(200)
-    res.sendFile(__dirname + "/Pages/page3-customer.html")
+    res.sendFile(__dirname + "/pages/page3-customer.html")
 })
 
 app.get('/page3-retailer', (req,res) => {
     res.status(200)
-    res.sendFile(__dirname + "/Pages/page3-retailer.html")
+    res.sendFile(__dirname + "/pages/page3-retailer.html")
 })
 
 app.get('/survey', (req, res) => {
     res.status(200)
-    res.sendFile(__dirname + "/Pages/quiz.html")
+    res.sendFile(__dirname + "/pages/quiz.html")
 })
 
 app.get('/catalogue', async (req, res) => {
