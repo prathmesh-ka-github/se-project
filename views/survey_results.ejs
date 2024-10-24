@@ -44,7 +44,6 @@
     <div class="resultsbuttons">
         <button class="results-buttons" onClick="history.back();">Back to quiz</button>
         <button class="results-buttons" onClick="window.location.reload();">Get Another Recommendation</button>
-
     </div>
     <div class="results-container">
         <% cards.forEach(function(card) { %>
@@ -57,6 +56,11 @@
             </div>
             
         <% }); %>
+    </div>
+    <div class="resultsbuttons">
+        <button class="results-buttons">Save to virtual closet</button>
+        <button class="results-buttons">Add to Queue</button>
+        <button class="results-buttons">Browse catalogue</button>
     </div>
 
     <!-- !--------------------FOOTER------------------- -->
