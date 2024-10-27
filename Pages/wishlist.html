@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <style>
+        .navbar-container {
+            display: flex;
+            justify-content: space-around;
+            background-color: #D5956E;
+            height: 70px;
+            align-items: center;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        .search-container img {
+            width: 35px;
+            margin: 0px 15px;
+            cursor: pointer;
+        }
+        .ham-container img {
+            width: 40px;
+            margin: 0px 15px;
+            cursor: pointer;
+        }
+        .nav-logo {
+            width: 150px;
+            cursor: pointer;
+        }
+        .nav-right {
+            display: flex;
+        }
+        .userprofile-container img {
+            height: 40px;
+            margin: 0px 15px;
+            cursor: pointer;
+        }
+        .shoppingcart-container img {
+            height: 40px;
+            margin: 0px 15px;
+            cursor: pointer;
+        }
+        .heart-icon {
+            fill: none;
+            stroke: black;
+            stroke-width: 1;
+            height: 40px;
+            margin: 0px 15px;
+            cursor: pointer;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 10px auto;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px;
+            position: relative;
+        }
+        .remove-btn {
+            cursor: pointer;
+            background-color: #77543e;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .back-btn {
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <div class="nav-left">
+            <div class="ham-container">
+                <img src="../assets/menu.svg" alt="ham-menu">
+            </div>
+            <div class="search-container">
+                <img src="../assets/search.svg" alt="search">
+            </div>
+        </div>
+        <div class="logo-container">
+            <a href="/">
+                <img class="nav-logo" src="../assets/Group 3.png" alt="boxedfashion">
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="userprofile-container">
+                <img src="../assets/userprofile.svg" alt="profile">
+            </div>
+            <div class="shoppingcart-container">
+                <img src="../assets/cart.png" alt="cart" onclick="window.location.href='/cart.html'">
+            </div>
+            <div class="wishlist-container">
+                <svg viewBox="0 0 24 24" class="heart-icon" onclick="window.location.href='/wishlist.html'">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <h2>Your Wishlist</h2>
+        <div id="wishlistItems"></div>
+        <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
+    </div>
+
+    <script>
+        function loadWishlistItems() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistItemsContainer = document.getElementById('wishlistItems');
+            
+            wishlistItemsContainer.innerHTML = wishlist.length 
+                ? wishlist.map(item => `
+                    <div class="item" data-id="${item.id}">
+                        <img src="${item.images}" alt="${item.name}" class="card-image">
+                        <p><strong>Product Name:</strong> ${item.name}</p>
+                        <p><strong>Product ID:</strong> ${item.id}</p> <br>
+                        <button class="remove-btn" onclick="removeFromWishlist('${item.id}')">Remove</button>
+                    </div>
+                `).join('') 
+                : "<p>Your wishlist is empty</p>";
+        }
+
+        function removeFromWishlist(id) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist = wishlist.filter(item => item.id !== id);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            loadWishlistItems(); 
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadWishlistItems();
+        });
+    </script>
+</body>
+</html>
