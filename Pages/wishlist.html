@@ -140,8 +140,7 @@
                 ? wishlist.map(item => `
                     <div class="item" data-id="${item.id}">
                         <img src="${item.images}" alt="${item.name}" class="card-image">
-                        <p><strong>Product Name:</strong> ${item.name}</p>
-                        <p><strong>Product ID:</strong> ${item.id}</p> <br>
+                        <p><strong>Product Name:</strong> ${item.name}</p> <br>
                         <button class="remove-btn" onclick="removeFromWishlist('${item.id}')">Remove</button>
                     </div>
                 `).join('') 
