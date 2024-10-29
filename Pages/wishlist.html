@@ -5,57 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wishlist</title>
     <style>
-        .navbar-container {
-            display: flex;
-            justify-content: space-around;
-            background-color: #D5956E;
-            height: 70px;
-            align-items: center;
-        }
-        .nav-left {
-            display: flex;
-            align-items: center;
-        }
-        .search-container img {
-            width: 35px;
-            margin: 0px 15px;
-            cursor: pointer;
-        }
-        .ham-container img {
-            width: 40px;
-            margin: 0px 15px;
-            cursor: pointer;
-        }
-        .nav-logo {
-            width: 150px;
-            cursor: pointer;
-        }
-        .nav-right {
-            display: flex;
-        }
-        .userprofile-container img {
-            height: 40px;
-            margin: 0px 15px;
-            cursor: pointer;
-        }
-        .shoppingcart-container img {
-            height: 40px;
-            margin: 0px 15px;
-            cursor: pointer;
-        }
-        .heart-icon {
-            fill: none;
-            stroke: black;
-            stroke-width: 1;
-            height: 40px;
-            margin: 0px 15px;
-            cursor: pointer;
-        }
         .container {
             width: 80%;
-            margin: 0 auto;
+            margin: 60px auto;
             text-align: center;
             margin-top: 20px;
+            min-height: 400px;
         }
         .item {
             border: 1px solid #ccc;
@@ -89,9 +44,7 @@
             height: auto;
             border-bottom: 1px solid #ccc;
         }
-        @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cagliostro&display=swap');
         body {
             font-family: Kodchasan, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
@@ -104,6 +57,11 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+    <!--! ------------------RIBBON-------------------- -->
+    <div class="ribbon">Free shipping available on all prepaid orders more than 10$ </div>
+
+
     <div class="navbar-container">
         <div class="nav-left">
             <div class="ham-container">
@@ -135,7 +93,7 @@
 
     
     <div class="container">
-        <h1>Your Wishlist</h1>
+        <h1 style="text-align: center; font-size:40px">Your Wishlist</h1>
         <div id="wishlistItems"></div>
         <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
     </div>
@@ -179,7 +137,7 @@
                         <button class="remove-btn" onclick="removeFromWishlist('${item.id}')">Remove</button>
                     </div>
                 `).join('') 
-                : "<p>Your wishlist is empty</p>";
+                : "<p>Your wishlist is empty :(</p>";
         }
 
         function removeFromWishlist(id) {
