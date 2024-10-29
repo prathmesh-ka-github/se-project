@@ -47,6 +47,29 @@
 .nav-right {
     display: flex;
 }
+.heart-icon {
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+    height: 30px;
+    margin: 0px 15px ;
+    cursor: pointer;
+}
+
+.counter-badge {
+    position: absolute;
+    color: black,
+    border-radius 50%;
+    font-size: 15px;
+    min-width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 215px;
+    top: 15px;
+    
+}
 
 .userprofile-container img {
     height: 30px;

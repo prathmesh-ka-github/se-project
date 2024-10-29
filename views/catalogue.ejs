@@ -6,49 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue</title>
     <style>
-
-        .navbar-container {
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        main {
             display: flex;
-            justify-content: space-around;
-            background-color: #D5956E;
-            height: 70px;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-        }
-        .search-container img {
-            width: 35px;
-            margin: 0px 15px ;
-            cursor: pointer;
-        }
-        .ham-container img {
-            width: 40px;
-            margin: 0px 15px ;
-            cursor: pointer;
-        }
-
-        .nav-logo {
-            width: 150px;
-            cursor: pointer;
-        }
-
-        .nav-right {
-            display: flex;
-        }
-
-        .userprofile-container img {
-            height: 40px;
-            margin: 0px 15px ;
-            cursor: pointer;
-        }
-
-        .shoppingcart-container img{
-            height: 40px;
-            margin: 0px 15px ;
-            cursor: pointer;
         }
 
         .card {
@@ -57,8 +23,8 @@
             padding: 16px;
             text-align: center;
             width: 300px;
-            margin: 10px auto;
             position: relative;
+            margin: 10px;
         }
         .card-image {
             width: 100%;
@@ -95,38 +61,29 @@
         .wishlist-btn:hover {
             background-color: #a86388;
         }
-        
-        .heart-icon {
-            fill: none;
-            stroke: black;
-            stroke-width: 1;
-            height: 40px;
-            margin: 0px 15px ;
-            cursor: pointer;
-        }
-
-        .counter-badge {
-            position: absolute;
-            color: black,
-            border-radius 50%;
-            font-size: 15px;
-            min-width: 14px;
-            height: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            right: 210px;
-            top: 15px;
-            
-        }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cagliostro&display=swap');
+        body {
+            font-family: Kodchasan, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
     </style>
+
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+    <!--! ------------------RIBBON-------------------- -->
+    <div class="ribbon">Free shipping available on all prepaid orders more than 10$ </div>
+
+
     <div class="navbar-container">
         <div class="nav-left">
             <div class="ham-container">
@@ -157,8 +114,8 @@
         </div>
     </div>
 
+    <h2 style="text-align: center; font-size:40px">Catalogue</h2>
     <main>
-        <h2 style="text-align: center">Catalogue</h2>
         <% products.forEach(function(product) { %>
             <div class="card" data-images="<%= product.images %>" data-product-id="<%= product.id %>">
                 <img src="" alt="<%= product.name %>" class="card-image">
@@ -178,6 +135,31 @@
             </div>
         <% }); %>
     </main>
+    <!-- !--------------------FOOTER------------------- -->
+    <div class="footer-container">
+        <div class="footer-left">
+            <div class="logocp-container">
+                <img src="assets/logo_cpright.png" alt="logo-copyright">
+            </div>
+            <div class="footer-links">
+                <img src="assets/icons8-github.svg" alt="icons8-github">
+                <img src="assets/icons8-instagram.svg" alt="icons8-instagram">
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="sub-right">
+                <div class="sub-right-heading">Support</div>
+                <div class="sub-right-content">About US</div>
+                <div class="sub-right-content">Contact</div>
+                <div class="sub-right-content">FAQs</div>
+            </div>
+            <div class="sub-right">
+                <div class="sub-right-heading">Services</div>
+                <div class="sub-right-content">catalogue</div>
+                <div class="sub-right-content">membership</div>
+            </div>
+        </div>
+    </div>
 
     <script>
         
