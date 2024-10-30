@@ -18,12 +18,12 @@ app.use(express.static(__dirname + ""))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'Pages')));
 
-// app.use(session({
-//     secret: 'secret_key', 
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: { secure: false } // set to true in production with HTTPS
-// }));
+app.use(session({
+    secret: 'secret_key', 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // set to true in production with HTTPS
+}));
 
 mongoose.connect('mongodb+srv://alden:1234@boxedfashioncluster.ljset.mongodb.net/ProductData?retryWrites=true&w=majority&appName=BoxedfashionCluster');
 
