@@ -195,37 +195,3 @@ app.post('/submit-survey', (req, res) => {
 app.listen (port, () => {
     console.log(`listening to http://localhost:${port}`)
 })
-
-
-
-
-
-
-
-//for catalogue page, to have it show only 50 items per page:
-// app.get('/catalogue', async (req, res) => {
-//     try {
-//         const page = parseInt(req.query.page) || 1; // Get page from query or default to 1
-//         const itemsPerPage = 50;
-
-//         // Get total count for pagination
-//         const totalProducts = await Product.countDocuments();
-//         const totalPages = Math.ceil(totalProducts / itemsPerPage);
-
-//         // Get products for current page
-//         const products = await Product.find({})
-//             .skip((page - 1) * itemsPerPage)
-//             .limit(itemsPerPage);
-
-//         res.render('catalogue', { 
-//             products: products,
-//             query: req.query,
-//             currentPage: page,
-//             totalPages: totalPages,
-//             totalProducts: totalProducts
-//         });
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).send('An error occurred while retrieving products.');
-//     }
-// });
