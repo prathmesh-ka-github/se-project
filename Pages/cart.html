@@ -128,10 +128,6 @@
 
     <div class="container">
         <h1 style="text-align: center; font-size:40px">Your Shopping Cart</h2>
-<<<<<<< HEAD
-            <div id="cartItems"></div>
-            <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
-=======
         <div id="cartItems"></div>
 
         <div class="subtotal-container">
@@ -140,7 +136,6 @@
         </div>
         
         <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
->>>>>>> 99509758356f4f377d00c5d93778f71a3e521209
     </div>
     <!-- !--------------------FOOTER------------------- -->
     <div class="footer-container">
@@ -168,27 +163,11 @@
         </div>
     </div>
 </body>
-<<<<<<< HEAD
-<script>
-    function updateCounter() {
-        const cart = JSON.parse(localStorage.getItem('cart'));
-        document.getElementById('cartCount').textContent = cart.length;
-    }
-
-    function loadCartItems() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartItemsContainer = document.getElementById('cartItems');
-
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
-            return;
-=======
     <script>
         function updateCounter() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             document.getElementById('cartCount').textContent = totalItems;
->>>>>>> 99509758356f4f377d00c5d93778f71a3e521209
         }
 
         cartItemsContainer.innerHTML = cart.map(item => `
