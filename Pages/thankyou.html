@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .thank-you-container {
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .thank-you-container h1 {
+            font-size: 36px;
+            color: #D5956E;
+            margin-bottom: 20px;
+        }
+        .thank-you-container p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .back-btn {
+            background-color: #D5956E;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been placed successfully. We hope you enjoy your items.</p>
+        <button class="back-btn" onclick="window.location.href='catalogue'">Back to Catalogue</button>
+    </div>
+</body>
+</html>
