@@ -111,9 +111,10 @@ app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).send('User not found');
+            console.log('user not found')
+            res.status(400).json({error : 'User not found'});
+            return 1
         }
-
         //const hashedPassword = await bcrypt.hash(password, 10);
         // console.log(hashedPassword)
         // console.log(user.password)

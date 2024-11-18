@@ -73,19 +73,24 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         password: document.getElementById('password').value
     };
 
-    const response = await fetch('/login', {
+    fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
-    });
+    }).then(response => {
+        if (response.ok) {
+            const data = response.json();
+            console.log(data);
+            localStorage.setItem('userEmail', data.email);
+            window.location.href = '/';
+        } else {
+            response.json().then(data => {
+                console.log(data)
+                alert('An error occurred during login. ' + data.error);
+            })
+        }
+    })
 
-    if (response.ok) {
-        const data = await response.json();
-        localStorage.setItem('userEmail', data.email);
-        window.location.href = '/';
-    } else {
-        alert('An error occurred during login.');
-    }
 });
