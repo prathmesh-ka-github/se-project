@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const customerBtn = document.getElementById('customerBtn');
     const retailerBtn = document.getElementById('retailerBtn');

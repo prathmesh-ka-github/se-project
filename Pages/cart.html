@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             margin-top: 20px;
             min-height: 400px;
         }
+
         .item {
             border: 1px solid #ccc;
             padding: 16px;
@@ -38,7 +40,9 @@
             align-items: center;
             justify-content: center
         }
-        .remove-btn, .quantity-btn{
+
+        .remove-btn,
+        .quantity-btn {
             cursor: pointer;
             background-color: #77543e;
             color: white;
@@ -46,6 +50,7 @@
             padding: 8px;
             border-radius: 4px;
         }
+
         .quantity-btn {
             background-color: #D5956E;
             color: white;
@@ -56,20 +61,23 @@
             height: auto;
             border-bottom: 1px solid #ccc;
         }
+
         @import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
         body {
             font-family: Kodchasan, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
     </style>
-        <link rel="stylesheet" href="styles/navbar.css">
-        <link rel="stylesheet" href="styles/footer.css">
-        <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
 
-        <!--! ------------------RIBBON-------------------- -->
-        <div class="ribbon">Free shipping available on all prepaid orders more than 10$ </div>
-    
+    <!--! ------------------RIBBON-------------------- -->
+    <div class="ribbon">Free shipping available on all prepaid orders more than 10$ </div>
+
     <div class="navbar-container">
         <div class="nav-left">
             <div class="ham-container">
@@ -85,7 +93,7 @@
             </a>
         </div>
         <div class="nav-right">
-            <div class="userprofile-container">
+            <div class="userprofile-container" onclick="window.location.href='/login'">
                 <img src="../assets/userprofile.svg" alt="profile">
             </div>
             <div class="shoppingcart-container">
@@ -94,17 +102,18 @@
             </div>
             <div class="wishlist-container">
                 <svg viewBox="0 0 24 24" class="heart-icon" onclick="window.location.href='/wishlist.html'">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
             </div>
         </div>
     </div>
 
-   
+
     <div class="container">
         <h1 style="text-align: center; font-size:40px">Your Shopping Cart</h2>
-        <div id="cartItems"></div>
-        <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
+            <div id="cartItems"></div>
+            <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
     </div>
     <!-- !--------------------FOOTER------------------- -->
     <div class="footer-container">
@@ -132,22 +141,22 @@
         </div>
     </div>
 </body>
-    <script>
-        function updateCounter() {
-            const cart = JSON.parse(localStorage.getItem('cart'));
-            document.getElementById('cartCount').textContent = cart.length;
+<script>
+    function updateCounter() {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cartCount').textContent = cart.length;
+    }
+
+    function loadCartItems() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cartItems');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
+            return;
         }
 
-        function loadCartItems() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartItemsContainer = document.getElementById('cartItems');
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
-                return;
-            }
-
-            cartItemsContainer.innerHTML = cart.map(item => `
+        cartItemsContainer.innerHTML = cart.map(item => `
                 <div class="item" data-id="${item.id}">
                     <img src="${item.images}" alt="${item.name}" class="card-image">
                     <div>
@@ -161,44 +170,42 @@
                     </div>
                 </div>
             `).join('');
-        }
+    }
 
-        function increaseQuantity(id) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.map(item => item.id === id ? { ...item, quantity: item.quantity + 1 } : item);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCartItems();
-            updateCounter();
-        }
+    function increaseQuantity(id) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.map(item => item.id === id ? { ...item, quantity: item.quantity + 1 } : item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCartItems();
+        updateCounter();
+    }
 
-        function decreaseQuantity(id) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.map(item => {
-                if (item.id === id && item.quantity > 1) {
-                    return { ...item, quantity: item.quantity - 1 };
-                }
-                return item;
-            });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCartItems();
-            updateCounter();
-        }
-
-        function removeFromCart(id) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.filter(item => item.id !== id);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCartItems();
-            updateCounter();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadCartItems();
-            updateCounter();
-            
+    function decreaseQuantity(id) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.map(item => {
+            if (item.id === id && item.quantity > 1) {
+                return { ...item, quantity: item.quantity - 1 };
+            }
+            return item;
         });
-    </script>
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCartItems();
+        updateCounter();
+    }
+
+    function removeFromCart(id) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.id !== id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCartItems();
+        updateCounter();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadCartItems();
+        updateCounter();
+
+    });
+</script>
+
 </html>
-
-
-

@@ -57,6 +57,11 @@ app.get('/signin', (req,res) => {
     res.sendFile(__dirname + "/Pages/page1.html")
 })
 
+app.get('/profile', (req,res) => {
+    res.status(200)
+    res.sendFile(__dirname + "/Pages/profile.html")
+})
+
 app.get('/page2', (req, res) => {
     res.sendFile(path.join(__dirname, 'Pages/page2.html'));
 });
@@ -191,6 +196,16 @@ app.post('/submit-survey', (req, res) => {
         res.status(500).send("An error occurred while executing the Python script.");
     });
 });
+
+app.post('/getuserdetails', async (req, res) => {
+    // console.log(req.body.useremail)
+    const useremail = req.body.useremail
+    // console.log('getuserdetails api called')
+    const user = await User.findOne({ email: useremail });
+    console.log(user)
+    res.json(user)
+})
+
 
 app.listen (port, () => {
     console.log(`listening to http://localhost:${port}`)
