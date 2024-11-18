@@ -135,6 +135,7 @@
                         <img src="${item.images}" alt="${item.name}" class="card-image">
                         <p><strong>Product Name:</strong> ${item.name}</p> <br>
                         <button class="remove-btn" onclick="removeFromWishlist('${item.id}')">Remove</button>
+                        <button class="remove-btn" onclick="moveToCart('${item.id}')">Move to Cart</button>
                     </div>
                 `).join('') 
                 : "<p>Your wishlist is empty :(</p>";
@@ -145,6 +146,28 @@
             wishlist = wishlist.filter(item => item.id !== id);
             localStorage.setItem('wishlist', JSON.stringify(wishlist));
             loadWishlistItems(); 
+        }
+
+        function moveToCart(id) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const item = wishlist.find(item => item.id === id);
+
+            if (item) {
+                wishlist = wishlist.filter(item => item.id !== id);
+
+                const existsInCart = cart.some(cartItem => cartItem.id === id);
+                if (!existsInCart) {
+                    item.quantity = 1; 
+                    cart.push(item);
+                }
+            }
+
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            loadWishlistItems();
         }
 
         document.addEventListener('DOMContentLoaded', () => {

@@ -113,7 +113,27 @@
             height: auto;
             border-bottom: 1px solid #ccc;
         }
+
+        .subtotal-container {
+        text-align: right;
+        margin-top: 20px;
+    }
+    .checkout-btn {
+        background-color: #D5956E;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .checkout-btn:hover {
+        background-color: #45a049;
+    }
     </style>
+
+<link rel="stylesheet" href="styles/navbar.css">
+<link rel="stylesheet" href="styles/footer.css">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
     
@@ -151,13 +171,20 @@
     <div class="container">
         <h2>Your Shopping Cart</h2>
         <div id="cartItems"></div>
+
+        <div class="subtotal-container">
+            <p><strong>Subtotal:</strong> $0.0</p>
+            <button class="checkout-btn" onclick="window.location.href = 'checkout.html';">Proceed to Checkout</button>
+        </div>
+        
         <button onclick="window.location.href = 'catalogue';" class="back-btn">Back to Catalogue</button>
     </div>
 
     <script>
         function updateCounter() {
-            const cart = JSON.parse(localStorage.getItem('cart'));
-            document.getElementById('cartCount').textContent = cart.length;
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
         }
 
         function loadCartItems() {
@@ -180,8 +207,11 @@
                         <button class="quantity-btn" onclick="decreaseQuantity('${item.id}')">-</button>
                         <button class="quantity-btn" onclick="increaseQuantity('${item.id}')">+</button>
                         <button class="remove-btn" onclick="removeFromCart('${item.id}')">Delete</button>
+                        <button class="remove-btn" onclick="moveToWishlist('${item.id}')">Move to Wishlist</button>
                     </div>
                 </div>
+
+
             `).join('');
         }
 
@@ -210,6 +240,28 @@
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart = cart.filter(item => item.id !== id);
             localStorage.setItem('cart', JSON.stringify(cart));
+            loadCartItems();
+            updateCounter();
+        }
+
+        function moveToWishlist(id) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            const item = cart.find(item => item.id === id);
+
+            if (item) {
+                cart = cart.filter(item => item.id !== id);
+
+                const existsInWishlist = wishlist.some(wishItem => wishItem.id === id);
+                if (!existsInWishlist) {
+                    wishlist.push(item);
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
             loadCartItems();
             updateCounter();
         }
