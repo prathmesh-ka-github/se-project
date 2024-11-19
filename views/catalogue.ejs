@@ -120,12 +120,12 @@
                 <div class="card-content">
                     <h3><%= product.name %></h3>
                     <p><%= product.description %></p>
-                    <p><strong>Price:</strong> <%= product.price %> <%= product.currency %></p>
+                    <p><strong>Price:</strong> $<%= product.selling_price %> </p>
                     <div class="button-group">
-                        <button class="cart-btn" onclick='addToCart("<%= product.id %>", "<%= product.name %>", "<%= product.images %>")'>
+                        <button class="cart-btn" onclick="addToCart('<%= product.id %>', '<%= product.name %>', '<%= product.images %>', '<%= product.selling_price %>')">
                             Add to Cart
                         </button>
-                        <button class="wishlist-btn" onclick='addToWishlist("<%= product.id %>", "<%= product.name %>", "<%= product.images %>")'>
+                        <button class="wishlist-btn" onclick="addToWishlist('<%= product.id %>', '<%= product.name %>', '<%= product.images %>', '<%= product.selling_price %>')">
                             Add to Wishlist
                         </button>
                     </div>
@@ -173,7 +173,7 @@
             document.getElementById('cartCount').textContent = cart.length;
         }
  
-        function addToCart(productId, productName, productImages) {
+        function addToCart(productId, productName, productImages, productPrice) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
             const existingItem = cart.find(item => item.id === productId);
@@ -185,7 +185,6 @@
                 for (let i = 0; i < images.length; i++) {
                     let img = new Image();
                     img.onload = function() {
-                        console.log(this.src);
                         image = this.src;
                         return;
                     }
@@ -198,7 +197,13 @@
                         break;
                     }
                 }
-                cart.push({ id: productId, name: productName, quantity: 1, images: image });
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    quantity: 1,
+                    images: image,
+                    selling_price: parseFloat(productPrice) 
+                });
             }
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCounter();
