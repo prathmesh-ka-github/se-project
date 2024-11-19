@@ -89,6 +89,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="/style.css">
+
 </head>
 
 <body>
@@ -111,7 +112,7 @@
             </a>
         </div>
         <div class="nav-right">
-            <div class="userprofile-container" onclick="window.location.href='/login'">
+            <div class="userprofile-container">
                 <img src="../assets/userprofile.svg" alt="profile">
             </div>
             <div class="shoppingcart-container">
@@ -173,7 +174,16 @@
         document.getElementById('cartCount').textContent = totalItems;
     }
 
-    cartItemsContainer.innerHTML = cart.map(item => `
+    function loadCartItems() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cartItems');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
+            return;
+        }
+
+        cartItemsContainer.innerHTML = cart.map(item => `
                 <div class="item" data-id="${item.id}">
                     <img src="${item.images}" alt="${item.name}" class="card-image">
                     <div>
@@ -190,6 +200,7 @@
 
 
             `).join('');
+    }
 
     function increaseQuantity(id) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -219,6 +230,7 @@
         loadCartItems();
         updateCounter();
     }
+
     function moveToWishlist(id) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
@@ -246,7 +258,6 @@
         updateCounter();
 
     });
-
 </script>
 
 </html>
