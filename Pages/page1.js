@@ -1,8 +1,9 @@
 document.getElementById('page1-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const formData = {
+        name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        password: document.getElementById('password').value
+        password: document.getElementById('password').value,
     };
     fetch('/create-user', {
         method: 'POST',

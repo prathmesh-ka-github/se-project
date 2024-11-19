@@ -1,28 +1,19 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoxedFashion Login</title>
+    <title>BoxedFashion - Profile</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/reshot-icon-box-VSWB78FAGX.svg" type="image/x-icon">
 
-    <link rel="stylesheet" href="/Pages/login.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/profile.css">
 </head>
-<script>
-    function checklogin(){
-        if(localStorage.getItem('userEmail')){
-            console.log('there is no useremail')
-            window.location.href="/profile"
-        }
-    }
-    checklogin()
-</script>
+
 <body>
     <!--! ------------------RIBBON-------------------- -->
     <div class="ribbon text-3xl">Free shipping available on all prepaid orders more than 10$ </div>
@@ -46,48 +37,33 @@
             <div class="userprofile-container">
                 <img src="../assets/userprofile.svg" alt="profile">
             </div>
-            <div class="shoppingcart-container">
+            <div class="shoppingcart-container" onclick="window.location.href='/cart.html'">
                 <img src="../assets/cart.png" alt="cart">
             </div>
         </div>
     </div>
-
-    <main>
-        <div class="login-container">
-            <p>Already a customer?</p>
-            <div class="toggle-container">
-                <button id="customerBtn" class="toggle-btn active">Customer</button>
-                <button id="retailerBtn" class="toggle-btn">Retailer</button>
-            </div>
-            <form id="loginForm">
-                <input type="email" id="email" placeholder="Customer Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <div class="form-options">
-                    <label class="remember-me">
-                        <input type="checkbox" id="rememberMe">
-                        Remember me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+    <div class="profile-container">
+        <div class="profile-card">
+            <h1 class="profile-heading">User Profile</h1>
+            <div class="profile-content">
+                <div class="pfp"><img src="/assets/default-pfp.jpg" alt="profile photo"></div>
+                <div class="profile-info">
+                    <div class="infoitem">Name - <span id="name"></span></div>
+                    <div class="infoitem">Email - <span id="email"></span></div>
+                    <div class="infoitem">Phone number - <span id="phone"></span></div>
+                    <div class="infoitem">Address - <span id="address"></span></div>
+                    <div class="profile-buttons">
+                        <button onclick="logout()" id="logoutbtn">Logout</button>
+                        <button onclick="window.location.href='/survey'">Style quiz</button>
+                    </div>
                 </div>
-                <button type="submit" class="login-btn">Customer Login</button>
-                <a href="/signin">Don't have an account yet? Register Here.</a>
-            </form>
-        </div>
-        <div id="forgotPasswordModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Reset Password</h2>
-                <p>Please enter your email address to reset your password.</p>
-                <input type="email" id="resetEmail" placeholder="Enter your email" required>
-                <button id="resetPasswordButton" class="reset-btn">Reset Password</button>
             </div>
         </div>
+    </div>
 
-        <div class="loginimage-container">
-            <img src="../assets/pexels-ogproductionz-17414150.jpg" alt="women">
-        </div>
-        
-    </main>
+
+
+
     <!-- !--------------------FOOTER------------------- -->
     <div class="footer-container">
         <div class="footer-left">
@@ -112,11 +88,8 @@
                 <div class="sub-right-content">membership</div>
             </div>
         </div>
-     </div>
-    
-    <script src="/pages/login.js"></script>
-
+    </div>
 </body>
-
+<script src="profile.js"></script>
 
 </html>
