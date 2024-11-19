@@ -35,10 +35,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        .vertical-line {
-            border-left: 2px solid #ccc;
-            height: 100%;
-        }
         .summary-container {
             padding-left: 20px;
         }
@@ -62,7 +58,7 @@
             background-color: #45a049;
         }
 
-        .save-btn{
+        .save-btn {
             cursor: pointer;
             background-color: #77543e;
             color: white;
@@ -75,7 +71,7 @@
 <body>
     <div class="container">
         <div class="form-container">
-            <h2 style="text-align: center; font-size:40px">Checkout</h2>
+            <h2>Checkout</h2>
             
             <div class="form-section">
                 <h3>Shipping Address</h3>
@@ -105,11 +101,11 @@
 
         <div class="summary-container">
             <h2>Order Summary</h2>
-            <p><strong>Subtotal:</strong> $0.0</p>
-            <p><strong>Shipping and Handling:</strong> $0.0</p>
-            <p><strong>Estimated Tax:</strong> $0.0</p>
+            <p><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></p>
+            <p><strong>Shipping and Handling:</strong> $<span id="shipping">9.99</span></p>
+            <p><strong>Estimated Tax:</strong> $<span id="tax">0.00</span></p>
             <div class="horizontal-line"></div>
-            <p><strong>Total:</strong> $0.0</p>
+            <p><strong>Total:</strong> $<span id="total">0.00</span></p>
             <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
         </div>
     </div>
@@ -127,39 +123,17 @@
                 zipCode: document.querySelector("input[placeholder='ZIP Code']").value,
             };
 
-           if (!address.fullName || !address.phoneNumber || !address.addressLine1 || !address.city || !address.state || !address.zipCode) {
+            if (!address.fullName || !address.phoneNumber || !address.addressLine1 || !address.city || !address.state || !address.zipCode) {
                 alert("Please fill in all required fields.");
                 return;
             }
 
-            // Save to localStorage
             localStorage.setItem("shippingAddress", JSON.stringify(address));
             alert("Address saved!");
-
-            // Save to backend
-            // fetch("/api/saveAddress", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(address),
-            // })
-            //     .then((response) => {
-            //         if (response.ok) {
-            //             alert("Address saved to the server!");
-            //         } else {
-            //             throw new Error("Failed to save address to the server.");
-            //         }
-            //     })
-            //     .catch((error) => {
-            //         console.error("Error saving address to backend:", error);
-            //         alert("Failed to save address to the server.");
-            //     });
         }
 
-    
         function saveCard() {
-           const cardDetails = {
+            const cardDetails = {
                 cardNumber: document.querySelector("input[placeholder='Card Number']").value,
                 cardholderName: document.querySelector("input[placeholder='Cardholder Name']").value,
                 expiryDate: document.querySelector("input[placeholder='MM/YY']").value,
@@ -171,35 +145,29 @@
                 return;
             }
 
-            // Save to localStorage
             localStorage.setItem("paymentCard", JSON.stringify(cardDetails));
             alert("Card details saved!");
+        }
 
-            // Save to backend
-            // fetch("/api/saveCard", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(cardDetails),
-            // })
-            //     .then((response) => {
-            //         if (response.ok) {
-            //             alert("Card details saved to the server!");
-            //         } else {
-            //             throw new Error("Failed to save card details to the server.");
-            //         }
-            //     })
-            //     .catch((error) => {
-            //         console.error("Error saving card details to backend:", error);
-            //         alert("Failed to save card details to the server.");
-            //     });
+        function calculateSummary() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const subtotal = cart.reduce((acc, item) => acc + item.selling_price * item.quantity, 0);
+            const shipping = 9.99;
+            const tax = subtotal * 0.03;
+            const total = subtotal + shipping + tax;
+
+            document.getElementById("subtotal").textContent = subtotal.toFixed(2);
+            document.getElementById("shipping").textContent = shipping.toFixed(2);
+            document.getElementById("tax").textContent = tax.toFixed(2);
+            document.getElementById("total").textContent = total.toFixed(2);
         }
 
         function placeOrder() {
             localStorage.removeItem("cart");
             window.location.href = "thankyou.html";
         }
+
+        document.addEventListener("DOMContentLoaded", calculateSummary);
     </script>
 </body>
 </html>
