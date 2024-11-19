@@ -14,9 +14,10 @@ async function getUserDetails() {
     }).then(res => {
         res.json().then(data=> {
             console.log(data)
+            name.innerHTML = data.name
             email.innerHTML = data.email
             phone.innerHTML = "+1 " + data.phone
-            address.innerHTML =  data.addressLine1 +", "+ data.city +", "+ data.state +", "+ data.zip +", "+ data.countryCode + "."
+            address.innerHTML =  data.addressLine1 +", "+ data.city +", "+ data.state +", zipcode - "+ data.zip +", "+ data.countryCode + "."
         })
     })
 }

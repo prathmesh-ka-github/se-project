@@ -84,10 +84,11 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         body: JSON.stringify(formData)
     }).then(response => {
         if (response.ok) {
-            const data = response.json();
-            console.log(data);
-            localStorage.setItem('userEmail', data.email);
-            window.location.href = '/';
+            response.json().then(data => {
+                console.log(data);
+                localStorage.setItem('userEmail', data.email);
+                window.location.href = '/';
+            })
         } else {
             response.json().then(data => {
                 console.log(data)
