@@ -210,7 +210,7 @@
         }
 
 
-        function addToWishlist(productId, productName, productImages) {
+        function addToWishlist(productId, productName, productImages, productPrice) {
             let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
             const existingItem = wishlist.find(item => item.id === productId);
@@ -232,7 +232,7 @@
                         break;
                     }
                 }
-                wishlist.push({ id: productId, name: productName, images: image });
+                wishlist.push({ id: productId, name: productName, images: image, quantity: 1, selling_price: parseFloat(productPrice) });
             }
             localStorage.setItem('wishlist', JSON.stringify(wishlist));
         }
