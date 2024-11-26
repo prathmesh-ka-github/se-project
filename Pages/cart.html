@@ -96,7 +96,11 @@
     <link rel="stylesheet" href="/style.css">
 
 </head>
-
+<script>
+    if (!localStorage.getItem('userEmail')) {
+    window.location.href="/login"
+}
+</script>
 <body>
 
     <!--! ------------------RIBBON-------------------- -->
@@ -174,6 +178,9 @@
     </div>
 </body>
     <script>
+        if (!localStorage.getItem('userEmail')) {
+            window.location.href="/login"
+        }
         function updateCounter() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);

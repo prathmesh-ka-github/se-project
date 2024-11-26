@@ -21,8 +21,11 @@ async function getUserDetails() {
         })
     })
 }
-
-getUserDetails()
+if (localStorage.getItem('userEmail')) {
+    getUserDetails()
+}else {
+    window.location.href="/login"
+}
 
 function logout() {
     localStorage.removeItem("userEmail");

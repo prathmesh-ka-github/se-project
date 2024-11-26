@@ -61,6 +61,11 @@
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="/style.css">
 </head>
+<script>
+    if (!localStorage.getItem('userEmail')) {
+    window.location.href="/login"
+}
+</script>
 <body>
 
     <!--! ------------------RIBBON-------------------- -->
