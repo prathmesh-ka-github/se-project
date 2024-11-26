@@ -117,7 +117,7 @@ app.post('/login', async (req, res) => {
         const user = await User.findOne({ email });
         if (!user) {
             console.log('user not found')
-            res.status(400).json({error : 'User not found'});
+            res.status(400).json({err : 'User not found'});
             return 1
         }
         //const hashedPassword = await bcrypt.hash(password, 10);
@@ -125,16 +125,16 @@ app.post('/login', async (req, res) => {
         // console.log(user.password)
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).send('Invalid credentials');
+            return res.status(400).json({err: 'Invalid credentials'});
         }
 
         // Set user email in local storage and redirect to the landing page
         req.session.userEmail = email;
-        console.log(user.email + "loggin in")
+        console.log(user.email + " loggin in")
         res.json({ email: user.email }); // This will be handled on the client-side to store in local storage
     } catch (error) {
         console.error(error);
-        res.status(500).send('An error occurred during login');
+        res.status(500).json({err:'An error occurred during login'});
     }
 });
 
@@ -203,7 +203,7 @@ app.post('/getuserdetails', async (req, res) => {
     const useremail = req.body.useremail
     // console.log('getuserdetails api called')
     const user = await User.findOne({ email: useremail });
-    console.log(user)
+    // console.log(user)
     res.json(user)
 })
 

@@ -83,6 +83,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         },
         body: JSON.stringify(formData)
     }).then(response => {
+        console.log(response)
         if (response.ok) {
             response.json().then(data => {
                 console.log(data);
@@ -92,7 +93,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         } else {
             response.json().then(data => {
                 console.log(data)
-                alert('An error occurred during login. ' + data.error);
+                alert('An error occurred during login. ' + data.err);
             })
         }
     })
