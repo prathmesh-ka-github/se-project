@@ -7,6 +7,11 @@
     <title>Shopping Cart</title>
 
     <style>
+        #cartItems {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .container {
             width: 80%;
             margin: 60px auto;
@@ -18,7 +23,7 @@
         .item {
             border: 1px solid #ccc;
             padding: 16px;
-            margin: 10px auto;
+            margin: 10px;
             border-radius: 5px;
             text-align: center;
             width: 300px;
@@ -180,7 +185,7 @@
             const cartItemsContainer = document.getElementById('cartItems');
 
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = "<p>Your cart is empty</p>";
+                cartItemsContainer.innerHTML = "<p>Your cart is empty :(</p>";
                 document.getElementById('subtotal').textContent = "0.0";
                 return;
             }

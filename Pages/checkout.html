@@ -222,6 +222,8 @@
         }
 
         function placeOrder() {
+            const cart = localStorage.getItem("cart")
+            localStorage.setItem('order', cart)
             localStorage.removeItem("cart");
             window.location.href = "thankyou.html";
         }

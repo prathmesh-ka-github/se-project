@@ -117,8 +117,8 @@
     font-size: 80px;
     color: white;
 }
-
 .explorebtn {
+    text-decoration: none;
     font-size: 40px;
     padding: 10px 40px;
     border-radius: 10px;
