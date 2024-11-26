@@ -44,11 +44,11 @@ function cancleOrder(id) {
 
 
 function loadOrderItems() {
-    const orders = JSON.parse(localStorage.getItem('order')) || [];
     const ordersItemsContainer = document.getElementById('orderItems');
+    const orders = JSON.parse(localStorage.getItem('order')) || [];
 
     if (orders.length === 0) {
-        cartItemsContainer.innerHTML = "<p>You dont have any orders :(</p> <a href='cart.html'>shopping cart</a>";
+        ordersItemsContainer.innerHTML = "<p class='no-orders'>You dont have any orders :(</p>";
         return;
     }
 

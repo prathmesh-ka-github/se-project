@@ -93,3 +93,7 @@
     color: #ff3a3a;
     cursor: pointer;
 }
+
+.no-orders {
+    font-size: 20px;
+}
