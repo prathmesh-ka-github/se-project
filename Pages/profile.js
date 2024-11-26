@@ -66,7 +66,7 @@ function loadOrderItems() {
                     <div>Price - $<span id="order-price">${item.selling_price}</span> </div>
                     <div>Quantity - <span id="order-quantity">${item.quantity}</span> </div>
                     <div>Status - Under processing</div>
-                    <div>
+                    <div class="cancleorder-btn">
                         <button onclick="cancleOrder('${item.id}')">Cancle order</button>
                     </div>
                 </div>
@@ -74,30 +74,6 @@ function loadOrderItems() {
             `;
     }).join("");
 }
-
-{/* <div class="item" data-id="${item.id}">
-<img src="${item.images}" alt="${item.name}" class="card-image">
-<div>
-    <p><strong>Product Name:</strong> ${item.name || "Unnamed Product"}</p>
-    <p><strong>Price:</strong> $${item.selling_price}</p>
-    <p><strong>Quantity:</strong> ${item.quantity}</p>
-</div>
-<div class="controls">
-    <button class="quantity-btn" onclick="decreaseQuantity('${item.id}')">-</button>
-    <button class="quantity-btn" onclick="increaseQuantity('${item.id}')">+</button>
-    <button class="remove-btn" onclick="removeFromCart('${item.id}')">Delete</button>
-    <button class="remove-btn" onclick="moveToWishlist('${item.id}')">Move to Wishlist</button>
-</div>
-</div> */}
-
-// function removeFromCart(id) {
-//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     cart = cart.filter(item => item.id !== id);
-//     localStorage.setItem('cart', JSON.stringify(cart));
-//     loadCartItems();
-//     updateCounter();
-// }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     updateCounter();

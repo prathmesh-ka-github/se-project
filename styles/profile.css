@@ -84,3 +84,12 @@
 .order-img img {
     width: 300px;
 }
+
+.cancleorder-btn button {
+    all: unset;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid #ff3a3a;
+    color: #ff3a3a;
+    cursor: pointer;
+}

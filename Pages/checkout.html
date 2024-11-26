@@ -222,8 +222,13 @@
         }
 
         function placeOrder() {
-            const cart = localStorage.getItem("cart")
-            localStorage.setItem('order', cart)
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const orders = JSON.parse(localStorage.getItem("order")) || [];
+            cart.forEach(cartItem => {
+                orders.push(cartItem)
+            });
+            console.log(orders)
+            localStorage.setItem('order', JSON.stringify(orders))
             localStorage.removeItem("cart");
             window.location.href = "thankyou.html";
         }
