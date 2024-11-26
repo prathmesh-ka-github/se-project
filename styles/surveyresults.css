@@ -36,6 +36,7 @@
     color: white;
     border-radius: 5px;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .results-container {
