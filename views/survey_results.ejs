@@ -54,14 +54,52 @@
                     <p><%= card.description %></p>
                 </div>
             </div>
-            
         <% }); %>
+        <script>
+            var recommendations = JSON.parse(localStorage.getItem('recommendations')) || []
+            var recommendation = []
+            //! [[],[1,3,4,5]]
+        </script>
+        <% cards.forEach(function(card){%>
+            <script>
+                var index = parseInt('<%= card.index %>')
+                var img = '<%= card.images%>'
+                var name = '<%= card.name%>'
+                var price = '<%= card.selling_price %>'
+                var cardItem = {
+                    index,
+                    img,
+                    name,
+                    price
+                }
+                recommendation.push(cardItem)
+                console.log(recommendation)
+
+            </script>
+        <%});%>
+        <script>
+            function saverecommendations(){
+                recommendations.push(recommendation)
+                console.log(recommendations)
+                localStorage.setItem("recommendations",JSON.stringify(recommendations))
+                window.location.href='profile'
+            }
+        </script>
+
     </div>
     <div class="resultsbuttons">
-        <button class="results-buttons">Save to virtual closet</button>
+        <button class="results-buttons" onclick="saverecommendations()">Save to virtual closet</button>
         <button class="results-buttons">Add to Queue</button>
         <button class="results-buttons" onclick="window.location.href = 'catalogue';">Browse catalogue</button>
     </div>
+    <script>
+    function saverecommendations(){
+        recommendations.push(recommendation)
+        console.log(recommendations)
+        localStorage.setItem("recommendations",JSON.stringify(recommendations))
+        window.location.href='profile'
+    }
+</script>
 
     <!-- !--------------------FOOTER------------------- -->
     <div class="footer-container">
@@ -90,4 +128,5 @@
     </div>
     
 </body>
+
 </html>
