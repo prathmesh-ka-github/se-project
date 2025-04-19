@@ -3,6 +3,8 @@
 
 Innovative fashion subscription service that connects fashion customers with retailers. The platform offers personalized style recommendations and curated clothing packages based on individual preferences.
 
+![screenshot](./ss.png)
+
 ## Key features -
 1. Personalized style profiles through detailed quizzes
 2. Smart outfit suggestions based on user preferences
@@ -53,3 +55,11 @@ to install all the dependencies before running the
     - X Code
 
 ![MEN STACK](./assets/menstackcropped1.png)
+
+
+## TODO:
+
+1. Add a search engine to the cataloge (DripAnime).
+1. Add a filter to the cataloge.
+1. Integrate payment portals.
+1. Make a "add to cart" function for virtual closet.
